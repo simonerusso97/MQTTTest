@@ -111,6 +111,7 @@ public class MQTTHelper {
     public void send(String message){
         MqttMessage mqttMessage = new MqttMessage(message.getBytes());
         try {
+            //TODO: vedere una callback
             mqttAndroidClient.publish(subscriptionTopic, mqttMessage);
         } catch (MqttException e) {
             e.printStackTrace();
